@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>You Got Hacked </title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff4d6d, #ff99ac);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+  }
+
+  h1 {
+    font-size: 55px;
+    animation: pop 1s ease;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<h1>I LOVE YOU SO MUCH! Remember that you hacked my heart first Gorrrdita❤️</h1>
+
+</body>
+</html>
