@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Access</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: #00ff9c;
+    font-family: monospace;
+    overflow: hidden;
+  }
+
+  #container {
+    padding: 20px;
+  }
+
+  #terminal {
+    font-size: 16px;
+    line-height: 1.4;
+    height: 80vh;
+    overflow: hidden;
+    white-space: pre-line;
+  }
+
+  .progress {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #00ff9c;
+    margin-top: 15px;
+  }
+
+  .bar {
+    height: 100%;
+    width: 0%;
+    background: #00ff9c;
+    transition: width 0.2s;
+  }
+
+  .warning {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div id="terminal"></div>
+
+  <div class="progress">
+    <div class="bar" id="bar"></div>
+  </div>
+</div>
+
+<script>
+const terminal = document.getElementById("terminal");
+const bar = document.getElementById("bar");
+
+const messages = [
+  "Initializing secure connection...",
+  "Scanning device...",
+  "IP detected: 192.168.1.24",
+  "Bypassing lock screen...",
+  "Accessing photo gallery...",
+  "Decrypting messages...",
+  "Uploading data to server...",
+  "WARNING: Suspicious files found...",
+  "Granting administrator access...",
+  "Finalizing operation..."
+];
+
+let progress = 0;
+
+function addLine() {
+  if (messages.length > 0) {
+    const msg = messages.shift();
+    terminal.innerHTML += msg + "\n";
+    terminal.scrollTop = terminal.scrollHeight;
+  }
+
+  progress += Math.random() * 15;
+  if (progress > 100) progress = 100;
+  bar.style.width = progress + "%";
+
+  if (progress < 100) {
+    setTimeout(addLine, 500 + Math.random() * 700);
+  } else {
+    setTimeout(() => {
+      window.location.href = "love.html";
+    }, 1500);
+  }
+}
+
+addLine();
+</script>
+
+</body>
+</html>
